@@ -153,7 +153,7 @@
                             <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Klinik</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="input_kode" value="<?php echo set_value('input_kode', $dokter->dklinik); ?>">
+                                  <input type="text" class="form-control" name="input_klinik" value="<?php echo set_value('input_klinik', $dokter->dklinik); ?>">
                               </div>
                             </div>
                             <input type="submit" name="submit" value="Ubah" class="btn btn-theme">

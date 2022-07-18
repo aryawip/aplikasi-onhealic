@@ -19,11 +19,11 @@ class AntrianModel extends CI_Model {
     // Karena ketika update, NO tidak harus divalidasi
     // Jadi NIS di validasi hanya ketika menambah data antrian saja
     if($mode == "save")
-    $this->form_validation->set_rules('input_no', 'NO', 'required|numeric|max_length[11]');
+    $this->form_validation->set_rules('input_no', 'No Antrian', 'required|numeric|max_length[11]');
     $this->form_validation->set_rules('input_jam', 'Jam', 'required|time');
     $this->form_validation->set_rules('input_status', 'Status', 'required|max_length[50]');
-    $this->form_validation->set_rules('input_dokter', 'ID Dokter', 'required|time');
-    $this->form_validation->set_rules('input_pasien', 'NIK Pasien', 'required|time');
+    $this->form_validation->set_rules('input_dokter', 'ID Dokter', 'required|numeric|max_length[11]');
+    $this->form_validation->set_rules('input_pasien', 'NIK Pasien', 'required|numeric|max_length[11]');
     
     if($this->form_validation->run()) // Jika validasi benar
       return TRUE; // Maka kembalikan hasilnya dengan TRUE
@@ -41,7 +41,7 @@ class AntrianModel extends CI_Model {
       "dpasien" => $this->input->post('input_pasien')
       );
     
-    $this->db->insert('no_antrian', $data); // Untuk mengeksekusi perintah insert data
+    $this->db->insert('antrian', $data); // Untuk mengeksekusi perintah insert data
   }
   
   // Fungsi untuk melakukan ubah data siswa berdasarkan NO antrian
